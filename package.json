@@ -1,0 +1,24 @@
+{
+  "name": "signalr-start",
+  "description": "Enable automatic updates in a web application using Azure Functions and SignalR",
+  "version": "1.0.0",
+  "main": "setup.js",
+  "scripts": {
+    "start": "lite-server -c bs-config.js",
+    "postinstall": "npm run setup",
+    "setup": "node setup.js",
+    "update-data": "node update.js",
+    "insert-data": "node insert.js"
+  },
+  "repository": {
+    "url": "https://github.com/leobononi/serverless-signalr-functions.git"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^2.1.5"
+  },
+  "devDependencies": {
+    "connect-history-api-fallback": "^1.6.0",
+    "http-proxy-middleware": "^1.0.4",
+    "lite-server": "^2.5.3"
+  }
+}
