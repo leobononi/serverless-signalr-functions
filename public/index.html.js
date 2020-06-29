@@ -8,8 +8,7 @@ const app = new Vue({
     methods: {
         async getStocks() {
             try {
-                // const apiUrl = `https://stockssignalr-apim.azure-api.net/getStocks`;
-                const response = await axios.get('/stockssignalr/getstocks', {headers: {'Access-Control-Allow-Origin': '*'}});
+                const response = await axios.get('https://stockssignalr-apim.azure-api.net/signalrw/getstocks', {headers: {'Access-Control-Allow-Origin': '*'}});
                 app.stocks = response.data;
             } catch (ex) {
                 console.error(ex);
@@ -23,7 +22,7 @@ const app = new Vue({
 
 const connect = () => {
     const connection = new signalR.HubConnectionBuilder()
-        .withUrl(`/stockssignalr`)
+        .withUrl(`https://stockssignalr-apim.azure-api.net/signalrw`)
         .build();
 
     connection.onclose(() => {
