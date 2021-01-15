@@ -3,7 +3,6 @@ const CosmosClient = cosmos.CosmosClient;
 const fs = require('fs');
 
 const settings = JSON.parse(fs.readFileSync('local.settings.json', 'utf8'));
-
 let endpoint = '';
 let client = null;
 
